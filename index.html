@@ -120,6 +120,55 @@
     border-radius: 8px;
     border: 1px solid #ccc;
   }
+
+  /* Sub-nav button layout */
+      .sub-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #eee;
+      }
+
+      /* Year buttons with clean gray style */
+      .sub-nav button {
+        padding: 8px 16px;
+        background-color: #eaeaea;
+        color: #333;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      .sub-nav button.active {
+        background-color: #333;
+        color: #fff;
+        border-color: #333;
+      }
+
+      .sub-nav button:hover {
+        background-color: #555;
+        color: white;
+      }
+
+
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .image-gallery img {
+      width: 300px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 </style>
 </head>
 <body>
@@ -499,6 +548,99 @@ Major: Biological Science<br>
       width: 60%;
     }
   }
+  .activities-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .year-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .year-btn {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .year-btn.active {
+    background-color: #333;
+    color: white;
+  }
+
+  .activities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .activity-item {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .activity-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+.resource-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.resource-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 180px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background-color: #fafafa;
+}
+
+.resource-item img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.resource-item p {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.resource-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.resource-description {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-top: 5px;
+  line-height: 1.4;
+  max-width: 160px;
+}
+
 </style>
 
 <div class="alumni-container">
@@ -536,7 +678,7 @@ Position after leaving the lab: Researcher with Bianzhi, Medical Research Center
 Major: Biochemistry and Molecular Biology<br>
 Email: <br>
  <br>
-Position after leaving the lab: Postdoc, School of Medicine, University of Pennsylvania<br>
+Position after leaving the lab: Postdoc, School of Medicine, University of Pennsylvania, USA<br>
 </div>
 </div>
 
@@ -672,20 +814,102 @@ Major: Biochemistry and Molecular Biology<br>
   </ul>
 </div>
 
-<div id="news" class="content-section">
-  <h2>News</h2>
-  <p>这里是新闻动态内容。</p>
-</div>
 
 <div id="activities" class="content-section">
-  <h2>Activities</h2>
-  <p>这里是活动内容。</p>
+  <h3 class="activities-title">Activities</h3>
+
+  <div class="year-buttons">
+    <button class="year-btn active" data-year="2025">2025</button>
+    <button class="year-btn" data-year="2024">2024</button>
+    <button class="year-btn" data-year="2023">2023</button>
+    <button class="year-btn" data-year="2022">2022</button>
+    <button class="year-btn" data-year="2021">2021</button>
+  </div>
+
+  <div class="activities-grid">
+    <!-- Example images for 2023 -->
+    <div class="activity-item" data-year="2025">
+      <img src="images/2025_graduation.jpg" alt="2025 Wan Lab graduates">
+      <p>2025 Wan Lab graduates</p>
+    </div>
+
+  </div>
 </div>
+
+
+
 
 <div id="resources" class="content-section">
   <h2>Resources</h2>
-  <p>这里是资源内容。</p>
-</div>
+
+  <h3>C. elegans Related</h3>
+  <div class="resource-grid">
+    <!-- WormBase -->
+    <div class="resource-item">
+      <a href="https://wormbase.org" target="_blank">
+        <img src="images/WormBase.jpg" alt="WormBase Logo">
+      </a>
+      <div class="resource-description">
+        Comprehensive database for <em>C. elegans</em> biology
+      </div>
+    </div>
+
+    <!-- WormBook -->
+    <div class="resource-item">
+      <a href="https://www.ncbi.nlm.nih.gov/books/NBK19662/" target="_blank">
+        <img src="images/wormbook.jpg" alt="WormBook Logo">
+      </a>
+      <div class="resource-description">
+      Reviews on <em>C. elegans</em> biology and genetics
+      </div>
+    </div>
+
+    <!-- WormBase Tools -->
+    <div class="resource-item">
+      <a href="https://wormbase.org/tools" target="_blank">
+        <img src="images/wormbasetools.jpg" alt="Wormbase Tools Logo">
+      </a>
+      <div class="resource-description">
+    Bioinformatics tools for exploring <em>C. elegans</em> data
+      </div>
+    </div>
+  </div> <!-- End of C. elegans resource-grid -->
+
+  <h3>Phase Separation Related</h3>
+  <div class="resource-grid">
+    <!-- PONDR -->
+    <div class="resource-item">
+      <a href="https://www.pondr.com/" target="_blank">
+        <img src="images/pondr.jpg" alt="PONDR Logo">
+      </a>
+      <div class="resource-description">
+        Predictor of Naturally Disordered Regions
+      </div>
+    </div>
+
+    <!-- metapredict -->
+    <div class="resource-item">
+      <a href="https://metapredict.net" target="_blank">
+        <img src="images/metapredict.jpg" alt="Metapredict Logo">
+      </a>
+      <div class="resource-description">
+        Fast, machine learning-based disorder predictor
+      </div>
+    </div>
+
+    <!-- PhaSepDB2.0 -->
+    <div class="resource-item">
+      <a href="http://db.phasep.pro/" target="_blank">
+        <img src="images/phasepdb.jpg" alt="PhaSepDB Logo">
+      </a>
+      <div class="resource-description">
+        A curated database of phase-separating proteins
+      </div>
+    </div>
+  </div> <!-- End of Phase Separation resource-grid -->
+</div> <!-- End of resources section -->
+
+
 
 <div id="joinus" class="content-section">
   <h3>Join Our Lab</h3>
@@ -744,3 +968,75 @@ Major: Biochemistry and Molecular Biology<br>
 
 </body>
 </html>
+
+<script>
+  document.querySelectorAll('.year-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedYear = btn.getAttribute('data-year');
+
+      // Toggle button style
+      document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Show/hide activity images
+      document.querySelectorAll('.activity-item').forEach(item => {
+        if (item.getAttribute('data-year') === selectedYear) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll("#activity-tabs button");
+    const contentBox = document.getElementById("activity-content");
+
+    const activityData = {
+      "2025": `
+        <h3>2025</h3>
+        <p>Lab retreat in March and graduation party in June.</p>
+        <div class="image-gallery">
+          <img src="images/2025-retreat.jpg" alt="2025 Retreat">
+          <img src="images/2025-graduation.jpg" alt="2025 Graduation">
+        </div>
+      `,
+      "2024": `
+        <h3>2024</h3>
+        <p>Poster sessions and conference presentations.</p>
+        <div class="image-gallery">
+          <img src="images/2024-conference.jpg" alt="2024 Conference">
+        </div>
+      `,
+      "2023": `
+        <h3>2023</h3>
+        <p>Group hiking and research symposium.</p>
+        <div class="image-gallery">
+          <img src="images/2023-hiking.jpg" alt="2023 Hiking">
+        </div>
+      `,
+      "2022": `
+        <h3>2022</h3>
+        <p>Lab celebrations and workshops.</p>
+      `
+    };
+
+    function showActivity(year) {
+      contentBox.innerHTML = activityData[year] || "<p>No data for this year yet.</p>";
+    }
+
+    showActivity("2025"); // Default year
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", function () {
+        tabs.forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
+        showActivity(this.getAttribute("data-year"));
+      });
+    });
+  });
+</script>
